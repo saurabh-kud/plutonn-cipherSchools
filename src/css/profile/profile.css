@@ -1,0 +1,111 @@
+.profile-card {
+  border-radius: 15px;
+  -webkit-box-shadow: 4px 2px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 4px 2px 16px rgba(0, 0, 0, 0.15);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 310px;
+  padding: 0 40px 40px;
+  text-align: center;
+  position: relative;
+}
+
+.profile-img {
+  height: 110px;
+  left: 50%;
+  position: absolute;
+  top: -40%;
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+  width: 110px;
+}
+
+.prof {
+  transition: all 0.3s ease-in-out;
+  transform: rotate(90deg);
+}
+
+.proficon {
+  height: 50px;
+  left: 10px;
+  position: absolute;
+  top: 0px;
+  -webkit-transform: translate(40%, 40%);
+  transform: translate(40%, 40%);
+  border-radius: 50%;
+  width: 50px;
+}
+
+.proficon-temp {
+  /* -o-object-fit: cover; */
+  object-fit: cover;
+  opacity: 1;
+  overflow: hidden;
+  /* -webkit-transform: scale(1); */
+  /* transform: scale(1); */
+  -webkit-transition: 0.15s ease;
+  transition: 0.15s ease;
+  z-index: 1;
+}
+.proficon-t {
+  box-shadow: 1px 1px 5px 3px #d3d3d3;
+}
+
+.line {
+  padding-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+.profile-status div {
+  padding-top: 20px;
+}
+.profile-status h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 21px;
+}
+.profile-status h3 {
+  font-size: 1.3rem;
+  text-transform: lowercase;
+  color: #353a42;
+
+  font-weight: 600;
+  line-height: 14px;
+}
+.profile-discription {
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  font-size: var(--fs-para);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-btn {
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+}
+
+.btn {
+  align-items: center;
+  background-color: #f45046;
+  border-radius: 15px;
+  -webkit-box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.15);
+  color: var(--white);
+  cursor: pointer;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  gap: 12px;
+  justify-content: center;
+  line-height: 27px;
+  padding: 8px 24px;
+}
