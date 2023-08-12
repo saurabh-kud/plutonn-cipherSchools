@@ -25,10 +25,10 @@ const Profile = () => {
         Click the login button and make yourself a part of this wonderful
         community.
       </p>
-      <buttton className="profile-btn btn">
+      <button className="profile-btn btn">
         <img src={loginicon} alt="" />
         login
-      </buttton>
+      </button>
     </section>
   );
 };

@@ -193,3 +193,32 @@ a {
 	text-decoration: none;
 	cursor: pointer;
 }
+*::-webkit-scrollbar {
+	width: 0;
+	height: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+	/* background-color: var(--primary-shade); */
+}
+
+*::-webkit-scrollbar-thumb {
+	/* background-color: var(--scrollbar); */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	/* background-color: var(--scrollbar-hover); */
+}
+
+/* *::selection {
+	background-color: var(--primary);
+	color: var(--primary-text);
+} */
+
+*::placeholder {
+	color: inherit;
+	font-weight: 400;
+	opacity: 0.6;
+	line-height: inherit;
+	text-transform: none;
+}

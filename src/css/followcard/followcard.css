@@ -1,0 +1,93 @@
+.follow-card {
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 15px;
+  margin: 18px 0;
+  overflow: hidden;
+  padding: 15px 0 20px 20px;
+  width: 100%;
+}
+
+.follow-list {
+  grid-gap: 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 2fr 1fr auto;
+  width: 100%;
+}
+
+.follow-list-click {
+  grid-gap: 10px;
+  -ms-flex-align: center;
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto 3fr;
+}
+
+.list-text {
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+.list-text span {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 14px;
+  white-space: pre-wrap;
+}
+.list-text h4 {
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.follow-list-img {
+}
+.list-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  opacity: 1;
+  overflow: hidden;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.15s ease;
+  transition: 0.15s ease;
+  z-index: 1;
+  display: flex;
+  box-shadow: 1px 1px 5px 3px #d3d3d3;
+}
+
+.follow-btn {
+  border-radius: 5px;
+  font-size: 1.3rem;
+  gap: 4px;
+  margin-left: auto;
+  padding: 5px;
+  width: auto;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #000;
+  align-items: center;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  line-height: 27px;
+  cursor: pointer;
+}
+.follow-btn svg {
+  height: 18px;
+  width: 18px;
+}
