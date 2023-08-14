@@ -3,19 +3,44 @@ import NavComp from "../navComp/NavComp";
 import Profile from "../profile/Profile";
 import "../../css/dashboard/dashboard.css";
 import TrendPostList from "../trendPostList/TrendPostList";
+import MainCard from "../mainCard/MainCard";
 
 // import Profile from "../../assets/profile.svg";
 
 const Dashboard = () => {
   return (
     <div className="main-container">
+      {/* ------------------ - -  - Left side - - - ----- */}
+
       <aside className="main-aside">
         <Profile />
         <NavComp />
         <FollowCard />
       </aside>
+
       <section className="main-main">
-        <article className="main-wrapper"></article>
+        {/* ------------------ - -  - Middle - - - ----- */}
+
+        <article className="main-wrapper">
+          <div className="main-header">
+            <ul className="main-header-wrapper">
+              <a className="home_listItem home_active" href="/">
+                Posts
+              </a>
+              <a className="home_listItem " href="/opportunities">
+                Opportunities
+              </a>
+            </ul>
+          </div>
+          <article className="infinitescroll-container">
+            <MainCard />
+            <MainCard />
+            <MainCard />
+            <MainCard />
+          </article>
+        </article>
+
+        {/* ------------------ - -  - Right side - - - ----- */}
         <article className="main-left-bar">
           <div className="treding-post">
             <div className="treding-post-header">
