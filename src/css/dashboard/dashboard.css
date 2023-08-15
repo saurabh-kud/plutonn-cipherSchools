@@ -3,6 +3,8 @@
   grid-template-columns: 310px 1fr;
   min-height: 100vh;
   /* background-color: blue; */
+  max-width: 1298px;
+  margin: auto;
 }
 
 .main-aside {

@@ -5,7 +5,7 @@
   backdrop-filter: blur(10px);
   background-color: #fff;
 
-  max-width: var(1281px);
+  max-width: 1281px;
   position: sticky;
   top: 0px;
   z-index: 1000;
