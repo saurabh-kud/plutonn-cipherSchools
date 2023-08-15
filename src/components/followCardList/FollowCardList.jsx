@@ -1,17 +1,13 @@
 import "../../css/followcard/followcard.css";
 
-const FollowCardList = () => {
+const FollowCardList = ({ data }) => {
   return (
     <li className="follow-list">
       <a className="follow-list-click" href="">
-        <img
-          src="https://d3gmywgj71m21w.cloudfront.net/afbe5cca6cc698f5e677a961ce7ae47f"
-          alt=""
-          className="follow-list-img list-img"
-        />
+        <img src={data?.profile} alt="" className="follow-list-img list-img" />
         <div className="list-text">
-          <span>@cipherschools.</span>
-          <h4>Cipher..</h4>
+          <span>@ {data?.firstName} </span>
+          <h4>{data?.firstName}</h4>
         </div>
       </a>
       <button className="follow-btn">

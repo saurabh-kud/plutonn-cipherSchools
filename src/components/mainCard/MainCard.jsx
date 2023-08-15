@@ -1,28 +1,31 @@
 import "../../css/mainCard/mainCard.css";
 import FollowCardList from "../followCardList/FollowCardList";
+import { useState } from "react";
 
-const MainCard = () => {
+const MainCard = ({ data }) => {
+  const [clicked, setClicked] = useState(false);
+  const d = { firstName: data?.user?.username, profile: data?.user?.profile };
   return (
     <div className="main-card">
-      <FollowCardList />
+      <FollowCardList data={d} />
       <div className="main-card-content">
         <div className="card-main-text">
-          <p>
-            Git Merge vs Git Rebase When we "merge changes" from one Git branch
-            to another, we can use either ‘git merge’ or ‘git rebase’. The
-            diagram below shows how these two commands work.
-          </p>
+          <p style={{ display: clicked && "block" }}>{data?.post_text}</p>
         </div>
-        <a href="" className="read_more">
+        <p
+          className="read_more"
+          onClick={() => {
+            setClicked(!clicked);
+          }}
+        >
           Read More
-        </a>
+        </p>
         <div>
-          <div className="main-card-img-wrapper">
-            <img
-              src="https://d3gmywgj71m21w.cloudfront.net/f81efd0066a3ee6a25f37b4ad60ea4db.jpg"
-              alt=""
-            />
-          </div>
+          {data.image_links.length > 0 ? (
+            <div className="main-card-img-wrapper">
+              <img src={data.image_links[0]} alt="" />
+            </div>
+          ) : null}
         </div>
       </div>
       <div className="main-card-action">
@@ -30,7 +33,7 @@ const MainCard = () => {
           <button className="card-cmt-btn card-like">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               aria-hidden="true"
               role="img"
               className="iconify iconify--ph"
@@ -43,13 +46,13 @@ const MainCard = () => {
                 d="M132 24A100.11 100.11 0 0 0 32 124v84.33A15.69 15.69 0 0 0 47.67 224H132a100 100 0 0 0 0-200Zm0 184H48v-84a84 84 0 1 1 84 84Z"
               ></path>
             </svg>
-            <span>1</span>
+            <span>{data?.comments}</span>
           </button>
         </div>
         <button className="card-like">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
             aria-hidden="true"
             role="img"
             className="iconify iconify--mdi"
@@ -62,15 +65,15 @@ const MainCard = () => {
               d="M23 10a2 2 0 0 0-2-2h-6.32l.96-4.57c.02-.1.03-.21.03-.32c0-.41-.17-.79-.44-1.06L14.17 1L7.59 7.58C7.22 7.95 7 8.45 7 9v10a2 2 0 0 0 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2M1 21h4V9H1v12Z"
             ></path>
           </svg>
-          <span>5</span>
+          <span>{data?.likes}</span>
         </button>
         <button className="card-share card-like">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
             aria-hidden="true"
             role="img"
-            class="iconify iconify--mdi"
+            className="iconify iconify--mdi"
             width="20"
             height="20"
             viewBox="0 0 24 24"
@@ -103,7 +106,7 @@ const MainCard = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 100 100"
               preserveAspectRatio="xMidYMid"
-              class="avatar_loader__QsUte "
+              className="avatar_loader__QsUte "
               aria-label="rotating-triangle-loading"
               data-testid="rotating-triangle-svg"
               aria-busy="true"
@@ -173,7 +176,7 @@ const MainCard = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 100 100"
               preserveAspectRatio="xMidYMid"
-              class="avatar_loader__QsUte "
+              className="avatar_loader__QsUte "
               aria-label="rotating-triangle-loading"
               data-testid="rotating-triangle-svg"
               aria-busy="true"

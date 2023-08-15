@@ -4,10 +4,36 @@ import Profile from "../profile/Profile";
 import "../../css/dashboard/dashboard.css";
 import TrendPostList from "../trendPostList/TrendPostList";
 import MainCard from "../mainCard/MainCard";
-
-// import Profile from "../../assets/profile.svg";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
+  const [postData, setPostData] = useState([]);
+  const [treandingPost, setTrendingPost] = useState([]);
+
+  useEffect(() => {
+    getTreandingPost();
+    getAllPost();
+  }, []);
+
+  const getAllPost = async () => {
+    const data = await axios.get(
+      ` https://www.plutonn.com/api/post/getposts?page=1&limit=15`
+    );
+    // const datajson = await data.json();
+
+    setPostData(data?.data?.data);
+  };
+
+  const getTreandingPost = async () => {
+    const data = await axios.get(
+      ` https://www.plutonn.com/api/post/get-trending-posts?page=1&limit=10`
+    );
+    // const datajson = await data.json();
+
+    setTrendingPost(data?.data?.data);
+  };
+
   return (
     <div className="main-container">
       {/* ------------------ - -  - Left side - - - ----- */}
@@ -33,10 +59,17 @@ const Dashboard = () => {
             </ul>
           </div>
           <article className="infinitescroll-container">
+            {postData.length > 0 ? (
+              postData?.map((d, index) => {
+                return <MainCard data={d} key={index} />;
+              })
+            ) : (
+              <h1>Loading......</h1>
+            )}
+            {/* <MainCard />
             <MainCard />
             <MainCard />
-            <MainCard />
-            <MainCard />
+            <MainCard /> */}
           </article>
         </article>
 
@@ -46,10 +79,10 @@ const Dashboard = () => {
             <div className="treding-post-header">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 aria-hidden="true"
                 role="img"
-                class="trending_cardIcon__zmz6C iconify iconify--ph"
+                className="trending_cardIcon__zmz6C iconify iconify--ph"
                 width="1em"
                 height="1em"
                 viewBox="0 0 256 256"
@@ -61,21 +94,29 @@ const Dashboard = () => {
               </svg>
               <h2>Trending Posts</h2>
             </div>
+
+            {treandingPost.length > 0 ? (
+              treandingPost?.map((d, index) => {
+                return <TrendPostList data={d} key={index} />;
+              })
+            ) : (
+              <h1>Loading.....</h1>
+            )}
+            {/* <TrendPostList />
             <TrendPostList />
             <TrendPostList />
             <TrendPostList />
             <TrendPostList />
-            <TrendPostList />
-            <TrendPostList />
+            <TrendPostList /> */}
           </div>
           <div className="treding-course">
             <div className="treding-post-header">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 aria-hidden="true"
                 role="img"
-                class="trending_cardIcon__zmz6C iconify iconify--ph"
+                className="trending_cardIcon__zmz6C iconify iconify--ph"
                 width="1em"
                 height="1em"
                 viewBox="0 0 256 256"
