@@ -12,11 +12,10 @@ const FollowCard = () => {
 
   const fetchTrendingUser = async () => {
     const data = await axios.get(
-      ` https://www.plutonn.com/api/user/get-trending-users`
+      ` https://corsproxy.io/?https://www.plutonn.com/api/user/get-trending-users`
     );
     // const datajson = await data.json();
 
-    
     setTrendingData(data?.data);
   };
 

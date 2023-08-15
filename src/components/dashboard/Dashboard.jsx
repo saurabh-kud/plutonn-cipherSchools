@@ -18,7 +18,7 @@ const Dashboard = () => {
 
   const getAllPost = async () => {
     const data = await axios.get(
-      ` https://www.plutonn.com/api/post/getposts?page=1&limit=15`
+      `https://corsproxy.io/?https://www.plutonn.com/api/post/getposts?page=1&limit=15`
     );
     // const datajson = await data.json();
 
@@ -27,7 +27,7 @@ const Dashboard = () => {
 
   const getTreandingPost = async () => {
     const data = await axios.get(
-      ` https://www.plutonn.com/api/post/get-trending-posts?page=1&limit=10`
+      ` https://corsproxy.io/?https://www.plutonn.com/api/post/get-trending-posts?page=1&limit=10`
     );
     // const datajson = await data.json();
 
