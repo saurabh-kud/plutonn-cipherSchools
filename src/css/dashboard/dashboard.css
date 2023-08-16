@@ -152,3 +152,19 @@
   overflow-y: auto;
   height: 100vh;
 }
+
+/* --------------------media query------------------------- */
+
+@media screen and (max-width: 800px) {
+  .main-left-bar {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-container {
+    display: block;
+  }
+  .main-aside {
+    display: none;
+  }
+}
