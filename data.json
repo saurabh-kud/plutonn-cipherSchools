@@ -1,0 +1,42 @@
+[
+  {
+    "id": "123",
+    "name": "Aarav Gupta",
+    "profileLink": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+    "text": "This post is really insightful!",
+    "replyId": null,
+    "createdAt": "2023-08-25T10:00:00Z"
+  },
+  {
+    "id": "124",
+    "name": "Mira Patel",
+    "profileLink": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "text": "I'm glad you found it helpful, Aarav!",
+
+    "createdAt": "2023-08-25T10:30:00Z"
+  },
+  {
+    "id": "125",
+    "name": "Rahul Verma",
+    "profileLink": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+    "text": "I have a question related to this topic.",
+    "replyId": null,
+    "createdAt": "2023-08-25T11:00:00Z"
+  },
+  {
+    "id": "126",
+    "name": "Vaibhav Verma",
+    "profileLink": "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "text": "Nice one Mira",
+    "replyId": null,
+    "createdAt": "2023-08-25T11:00:00Z"
+  },
+  {
+    "id": "127",
+    "name": "Aarav Gupta",
+    "profileLink": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+    "text": "Sure, Rahul! Feel free to ask your question.",
+    "replyId": "cmt125",
+    "createdAt": "2023-08-25T11:30:00Z"
+  }
+]

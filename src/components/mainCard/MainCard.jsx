@@ -1,10 +1,61 @@
 import "../../css/mainCard/mainCard.css";
+import Comment from "../comment/Comment";
 import FollowCardList from "../followCardList/FollowCardList";
 import { useState } from "react";
 
 const MainCard = ({ data }) => {
   const [clicked, setClicked] = useState(false);
   const d = { firstName: data?.user?.username, profile: data?.user?.profile };
+  const [isClicked, setIsClicked] = useState(false);
+  const [commentData, setData] = useState([
+    {
+      id: "123",
+      name: "Aarav Gupta",
+      profileLink:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+      text: "This post is really insightful!",
+      replyId: null,
+      createdAt: "2023-08-23T10:00:00Z",
+    },
+    {
+      id: "124",
+      name: "Mira Patel",
+      profileLink:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      text: "I'm glad you found it helpful, Aarav!",
+      replyId: "123",
+
+      createdAt: "2023-08-25T10:30:00Z",
+    },
+    {
+      id: "125",
+      name: "Rahul Verma",
+      profileLink:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+      text: "I have a question related to this topic.",
+      replyId: null,
+      createdAt: "2023-08-25T11:00:00Z",
+    },
+    {
+      id: "126",
+      name: "Vaibhav Verma",
+      profileLink:
+        "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      text: "Nice one Mira",
+      replyId: null,
+      createdAt: "2023-08-25T11:00:00Z",
+    },
+    {
+      id: "127",
+      name: "Aarav Gupta",
+      profileLink:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+      text: "Sure, Rahul! Feel free to ask your question.",
+      replyId: "125",
+      createdAt: "2023-08-25T11:30:00Z",
+    },
+  ]);
+
   return (
     <div className="main-card">
       <FollowCardList data={d} />
@@ -30,7 +81,12 @@ const MainCard = ({ data }) => {
       </div>
       <div className="main-card-action">
         <div className="card-comment">
-          <button className="card-cmt-btn card-like">
+          <button
+            className="card-cmt-btn card-like"
+            onClick={() => {
+              setIsClicked(!isClicked);
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -244,8 +300,42 @@ const MainCard = ({ data }) => {
           </div>
         </a>
       </div>
+
+      {/* <Comment />
+      <Comment />
+      <Comment /> */}
+
+      {isClicked &&
+        commentData.map((comment) => {
+          const repl = commentData.filter((com) => {
+            return comment.id == com.replyId;
+          });
+          // console.log(repl);
+          // const updatedData = commentData.filter((co) => {
+          //   return co.id != repl[0].id;
+          // });
+          // setData(updatedData);
+
+          return (
+            <>
+              {comment.replyId ? null : (
+                <Comment key={comment.id} data={comment} />
+              )}
+
+              {repl.length > 0
+                ? repl?.map((re) => {
+                    return <Comment key={re.id} data={re} />;
+                  })
+                : null}
+            </>
+          );
+        })}
     </div>
   );
 };
 
 export default MainCard;
+
+
+
+

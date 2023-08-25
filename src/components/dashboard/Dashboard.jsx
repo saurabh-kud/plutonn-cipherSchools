@@ -11,6 +11,9 @@ const Dashboard = () => {
   const [postData, setPostData] = useState([]);
   const [treandingPost, setTrendingPost] = useState([]);
 
+    
+
+
   useEffect(() => {
     getTreandingPost();
     getAllPost();
